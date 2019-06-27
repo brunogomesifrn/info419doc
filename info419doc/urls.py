@@ -19,6 +19,13 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+	#URLs de Tipo
+	path('tipo/', lista_tipo, name='tipo'),
+	path('tipo_cadastro/', tipo_cadastro, name='tipo_cadastro'),
+	path('tipo_atualizar/<int:id>/', tipo_atualizar, name='tipo_atualizar'),
+	path('tpo_deletar/<int:id>/', tipo_deletar, name='tipo_deletar'),
+
+
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
