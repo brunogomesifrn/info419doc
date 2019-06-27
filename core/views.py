@@ -4,7 +4,6 @@ from .forms import TipoForm
 
 #CRUD DO TIPO
 
-
 def CadastroTipo(request):
 	form = TipoForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
@@ -43,5 +42,39 @@ def deletar(request, id):
 
 #CRUD DOCUMENTO
 
+def cadastroDoc(request):
+	form = DocForm(request.POST or None, request.FILES or None)
+	if form.is_valid():
+		form.save()
+		return redirect('documento')
+
+	contexto = {
+		'form': form
+	}
+	return render(request, 'documento.html', contexto)
+
+
+def documento(request):
+	doc = Doc.objects.all()
+	contexto = {
+		'lista_doc': doc
+	}
+	return render(request, 'documento.html', contexto)
+
+def atualizarDoc(request, id):
+	doc = Doc.objects.get(pk=id)
+	form = DocForm(request.POST or None, request.FILES or None, instance=curso)
+	if form.is_valid():
+		form.save()
+		return redirect('documento')
+	contexto = {
+		'form': form
+	}
+	return render(request, 'cadastro.html', contexto)
+
+def deletarDoc(request, id):
+	doc = Doc.objects.get(pk=id)
+	curso.delete()
+	return redirect('documento')
 
 
