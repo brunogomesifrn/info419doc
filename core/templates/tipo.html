@@ -3,20 +3,19 @@
 	<title></title>
 </head>
 <body>
-<h1>Administração de Públicos</h1>
-<a href="{% url 'publico_cadastro' %}">
+<h1>Tipo</h1>
+<a href="{% url 'tipo_cadastro' %}">
     <button type="button">Cadastrar</button>
 </a>
 
-<p>Lista de Públicos:</p>
+<p>Lista de Tipos:</p>
 
-{% for publico in publicos %}
+{% for tipo in tipo %}
     <p>{{publico.nome}}
-    	<a href="{% url 'publico_atualizar' publico.id %}">EDITAR</a>
-    	<a href="{% url 'publico_deletar' publico.id %}">DELETAR</a>
+    	<a href="{% url 'tipo_atualizar' publico.id %}">EDITAR</a>
+    	<a href="{% url 'tipo_deletar' publico.id %}">DELETAR</a>
     </p>
 {% empty %}
-    <p>Nenhum público cadastrada</p>
 {% endfor %}
 
 
