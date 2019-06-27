@@ -1,3 +1,4 @@
 from django.db import models
 
-# Create your models here.
+class Tipo(models.Model):
+	nome = models.CharField('Tipo', max_length=100)
