@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from .models import Tipo
 from .forms import TipoForm
 
+<<<<<<< HEAD
 #CRUD DO TIPO
 
 def CadastroTipo(request):
@@ -41,6 +42,13 @@ def deletar(request, id):
 
 
 #CRUD DOCUMENTO
+=======
+
+
+
+
+
+>>>>>>> 61a46222cb4f6b2e68290be7ca8bb94f52c7bdfc
 
 def cadastroDoc(request):
 	form = DocForm(request.POST or None, request.FILES or None)
