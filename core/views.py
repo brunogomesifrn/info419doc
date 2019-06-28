@@ -4,9 +4,7 @@ from .forms import TipoForm
 
 
 #CRUD DO TIPO
-
-
-def tipo_cadastro(request):
+def tipo_cadastrar(request):
 	form = TipoForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
 		form.save()
@@ -14,13 +12,13 @@ def tipo_cadastro(request):
 	contexto = {
 		'form': form
 	}
-	return render(request, 'tipo.html', contexto)
+	return render(request, 'tipo_cadastro.html', contexto)
 
 
-def tipo(request):
+def tipo_listar(request):
 	tipo = Tipo.objects.all()
 	contexto = {
-		'lista_tipo': tipo
+		'lista_tipo' : tipo
 	}
 	return render(request, 'tipo.html', contexto)
 
@@ -33,7 +31,7 @@ def tipo_atualizar(request, id):
 	contexto = {
 		'form': form
 	}
-	return render(request, 'cadastro.html', contexto)
+	return render(request, 'tipo_cadastro.html', contexto)
 
 def tipo_deletar(request, id):
 	tipo = Tipo.objects.get(pk=id)

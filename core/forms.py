@@ -3,7 +3,7 @@ from .models import Tipo, Doc
 
 class TipoForm(ModelForm):
 	class Meta():
-		model = Cursos
+		model = Tipo
 		fields = ['nome']
 
 class DocForm(ModelForm):

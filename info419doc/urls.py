@@ -17,11 +17,12 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from core.views import tipo_lista, tipo_cadastrar
 
 urlpatterns = [
 	#URLs de Tipo
-	path('tipo/', lista_tipo, name='tipo'),
-	path('tipo_cadastro/', tipo_cadastro, name='tipo_cadastro'),
+	path('tipo/', tipo_lista, name='tipo'),
+	path('tipo_cadastrar/', tipo_cadastrar, name='tipo_cadastrar'),
 	path('tipo_atualizar/<int:id>/', tipo_atualizar, name='tipo_atualizar'),
 	path('tpo_deletar/<int:id>/', tipo_deletar, name='tipo_deletar'),
 

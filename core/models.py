@@ -3,6 +3,8 @@ from django.db import models
 class Tipo(models.Model):
 	nome = models.CharField('Tipo', max_length=100)
 
+class Tipo_Cadastro(models.Model):
+	nome = models.CharField('Tipo', max_length=100)
 
 class Doc(models.Model):
 	nome = models.CharField('Nome', max_length=100)

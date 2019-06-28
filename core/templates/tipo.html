@@ -4,18 +4,19 @@
 </head>
 <body>
 <h1>Tipo</h1>
-<a href="{% url 'tipo_cadastro' %}">
-    <button type="button">Cadastrar</button>
+<a href="{% url 'tipo_cadastrar' %}">
+    <button type="button">Cadastrar Tipo</button>
 </a>
 
-<p>Lista de Tipos:</p>
+<p>Lista de Tipos de Documentos:</p>
 
-{% for tipo in tipo %}
-    <p>{{publico.nome}}
-    	<a href="{% url 'tipo_atualizar' publico.id %}">EDITAR</a>
-    	<a href="{% url 'tipo_deletar' publico.id %}">DELETAR</a>
+{% for tipo in lista_tipo %}
+    <p>{{ tipo.nome }}
+    	<a href="{% url 'tipo_atualizar' tipo.id %}">EDITAR</a>
+    	<a href="{% url 'tipo_deletar' tipo.id %}">DELETAR</a>
     </p>
 {% empty %}
+<p>Nenhum tipo cadastrado</p>
 {% endfor %}
 
 
