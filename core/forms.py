@@ -9,7 +9,7 @@ class TipoForm(ModelForm):
 class DocForm(ModelForm):
 	class Meta():
 		model = Doc
-		fields = ['nome','arquivo']#, 'data', 'local']
+		fields = ['nome','arquivo', 'data', 'local']
 
 class cadastroForm(ModelForm):
 	class Meta():

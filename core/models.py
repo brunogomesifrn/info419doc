@@ -6,12 +6,10 @@ class Tipo(models.Model):
 class Doc(models.Model):
 	nome = models.CharField('Nome', max_length=100)
 	arquivo = models.FileField('Arquivo', upload_to='upload')
-    #data = models.DateTimeField('Data')
-   
-   # local = models.CharField('Local Físico' ax_length=100
-
+	data = models.DateTimeField('Data')
+	local = models.CharField('Local Físico', max_length=100)
 
 class cadastro(models.Model):
-    usuario = models.CharField('usuario', max_length=100)
+	usuario = models.CharField('usuario', max_length=100)
     senha = models.CharField('senha', null=True)
     repetir_senha = models.CharField('repetir_senha', null=True)
