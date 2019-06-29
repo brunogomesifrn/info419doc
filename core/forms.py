@@ -1,5 +1,6 @@
 from django.forms import ModelForm
 from .models import Tipo, Doc
+from .models import cadastro, login, index
 
 class TipoForm(ModelForm):
 	class Meta():
