@@ -24,7 +24,7 @@ from core.views import documento, cadastrarDoc, atualizarDoc, deletarDoc
 =======
 
 from core.views import doc_lista, doc_cadastrar, doc_atualizar, doc_deletar
-from core.views import cadastro, index
+from core.views import cadastro, index, login
 
 >>>>>>> 0eabe02b2f730a85462a5637a5f23f93a54fe0d7
 
@@ -49,7 +49,7 @@ urlpatterns = [
 
     path('', index, name='index'),
     path('cadastro/', cadastro, name='cadastro'),
-    
+    path('', login, name='login'),
 
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
