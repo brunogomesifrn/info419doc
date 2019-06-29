@@ -18,6 +18,7 @@ from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
 from core.views import tipo_lista, tipo_cadastrar
+from core.views import doc_lista, doc_cadastrar, doc_atualizar, doc_deletar
 
 urlpatterns = [
 	#URLs de Tipo
@@ -26,6 +27,12 @@ urlpatterns = [
 	path('tipo_atualizar/<int:id>/', tipo_atualizar, name='tipo_atualizar'),
 	path('tpo_deletar/<int:id>/', tipo_deletar, name='tipo_deletar'),
 
+
+    #URLs de documento
+    path('documento/', doc_lista, name='doc'),
+    path('documento_cadastrar/', doc_cadastrar, name='doc_cadastrar'),
+    path('doc_atualizar/<int:id>/', doc_atualizar, name='doc_atualizar'),
+    path('doc_deletar/<int:id>/', doc_deletar, name='doc_deletar'),
 
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
