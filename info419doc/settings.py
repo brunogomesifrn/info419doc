@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'core',
+    'widget_tweaks',
 
 ]
 
@@ -121,8 +122,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-LOGIN_URL = '/login/'
-
-LOGIN_REDIRECT_URL = 'perfil'
+LOGIN_URL = '/media/'
 
 MEDIA_ROOT = 'media'
