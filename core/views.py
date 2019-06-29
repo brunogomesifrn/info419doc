@@ -44,7 +44,7 @@ def cadastroDoc(request):
 	form = DocForm(request.POST or None, request.FILES or None)
 	if form.is_valid():
 		form.save()
-		return redirect('documento')
+		return redirect('doc')
 
 	contexto = {
 		'form': form
@@ -64,15 +64,15 @@ def atualizarDoc(request, id):
 	form = DocForm(request.POST or None, request.FILES or None, instance=curso)
 	if form.is_valid():
 		form.save()
-		return redirect('documento')
+		return redirect('doc')
 	contexto = {
 		'form': form
 	}
-	return render(request, 'cadastro.html', contexto)
+	return render(request, 'cadastrar_documento.html', contexto)
 
 def deletarDoc(request, id):
 	doc = Doc.objects.get(pk=id)
 	curso.delete()
-	return redirect('documento')
+	return redirect('doc')
 
 
