@@ -17,11 +17,18 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-
 from core.views import tipo_listar, tipo_cadastrar, tipo_atualizar, tipo_deletar
+<<<<<<< HEAD
 from core.views import documento doc_cadastrar, doc_atualizar, doc_deletar
 from core.views import cadastro, index, login
 
+=======
+from core.views import documento, cadastrarDoc, atualizarDoc, deletarDoc
+from core.views import doc_lista, doc_cadastrar, doc_atualizar, doc_deletar
+from core.views import cadastro, index, login
+
+
+>>>>>>> 34089e8b0e6b16ec6275b47397990793c066bab6
 
 urlpatterns = [
 	#URLs de Tipo
