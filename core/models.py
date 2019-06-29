@@ -12,5 +12,5 @@ class Doc(models.Model):
 
 class cadastro(models.Model):
     usuario = models.CharField('usuario', max_length=100)
-    senha = models.DateField('senha', null=True)
-    repetir_senha = models.IntegerField('repetir_senha', null=True)
+    senha = models.CharField('senha', null=True)
+    repetir_senha = models.CharField('repetir_senha', null=True)

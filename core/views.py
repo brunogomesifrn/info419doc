@@ -1,6 +1,8 @@
 from django.shortcuts import render, redirect
 from .models import Tipo, Doc
+from .models import Cursos
 from .forms import TipoForm, DocForm
+
 
 def cadastro(request):
 	return render(request, "cadastro.html")
@@ -13,6 +15,7 @@ def login(request):
 @login_required
 def perfl(request):
 	return render(request, "perfil.html")
+	
 #CRUD DO TIPO
 def tipo_cadastrar(request):
 	form = TipoForm(request.POST or None, request.FILES or None)
