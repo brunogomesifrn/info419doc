@@ -12,8 +12,8 @@ def index(request):
 
 def login(request):
 	return render(request, "login.html")
-@login_required
-def perfl(request):
+#@login_required
+def perfil(request):
 	return render(request, "perfil.html")
 	
 #CRUD DO TIPO

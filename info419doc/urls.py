@@ -20,7 +20,7 @@ from django.conf.urls.static import static
 #from django.contrib.auth import views auth_views
 
 from core.views import tipo_listar, tipo_cadastrar, tipo_atualizar, tipo_deletar
-from core.views import documento, doc_cadastrar, doc_atualizar, doc_deletar
+from core.views import documento, cadastroDoc, atualizarDoc, deletarDoc
 from core.views import cadastro, index, login, perfil
 
 urlpatterns = [
@@ -37,15 +37,15 @@ urlpatterns = [
 
     #URLs de documento
     path('documento/', documento, name='doc'),
-    path('cadastrarDoc/', cadastrarDoc, name='cadastrarDoc'),
+    path('cadastrarDoc/', cadastroDoc, name='cadastrarDoc'),
     path('atualizarDoc/<int:id>/', atualizarDoc, name='atualizarDoc'),
     path('deletarDoc/<int:id>/', deletarDoc, name='deletarDoc'),
 
 
     path('', index, name='index'),
     path('cadastro/', cadastro, name='cadastro'),
-    path("logout/", auth_views.LogoutView.as_view(),
-    name="logout"),
+    #path("logout/", auth_views.LogoutView.as_view(),
+    #name="logout"),
 
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

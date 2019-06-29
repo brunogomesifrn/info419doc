@@ -15,3 +15,7 @@ class cadastroForm(ModelForm):
 	class Meta():
 		model = cadastro
 		fields = ['usuario', 'senha', 'repetir_senha']
+
+
+
+
