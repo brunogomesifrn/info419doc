@@ -37,11 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'core',
-=======
-    'core'
->>>>>>> f023a75d5733e6a97f77a0e051d06139da60ce93
+
 ]
 
 MIDDLEWARE = [
@@ -124,6 +121,6 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
-MEDIA_URL = '/media/'
+LOGIN_URL = '/media/'
 
 MEDIA_ROOT = 'media'

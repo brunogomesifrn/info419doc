@@ -30,6 +30,7 @@
                 <tr>
                   <th scope="col">Nome </th>
                   <th scope="col">Data de Inicio</th>
+                  <th scope="col">Arquivo</th>
                   <th scope="col">Local</th>
                   <th scope="col">Gerenciar</th>
                 </tr>
@@ -40,8 +41,9 @@
               {% for docs in lista_doc %}
                 <tr>
                   <th scope="row">{{ docs.nome }}</th>
-                  <td>{{ docs.data_inicio }}</td>
+                  <td>{{ docs.data }}</td>
                   <td><p> <img src="/media/{{docs.arquivo}}" alt="Arquivo" width="100px" height="100px"/></td>
+                  <td>{{ docs.local }}</td>
                   <td>
                       <a href="{% url 'atualizarDoc' docs.id %}"><button type="button" class="btn btn-info">Editar</button></a>
                       <a href="{% url 'deletarDocs' docs.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>

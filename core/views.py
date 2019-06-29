@@ -1,7 +1,16 @@
 from django.shortcuts import render, redirect
-from .models import Tipo
-from .forms import TipoForm
+from .models import Tipo, Doc
+from .forms import TipoForm, DocForm
 
+def cadastro(request):
+	return render(request, "cadastro.html")
+
+def index(request):
+	return render(request, "index.html")
+
+def login(request):
+	return render(request, "login.html")
+	
 
 #CRUD DO TIPO
 def tipo_cadastrar(request):
