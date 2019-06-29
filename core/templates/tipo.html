@@ -1,38 +1,69 @@
 {% load static %}
-<!DOCTYPE HTML>
-<html>
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-	<title>Lista Tipos</title>
-	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-	<link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Lista Tipos</title>
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
 </head>
-<body>
-<h1>Tipo</h1>
-<a href="{% url 'tipo_cadastrar' %}">
-    <button type="button">Cadastrar Tipo</button>
-</a>
 
-<p>Lista de Tipos de Documentos:</p>
+<body  background="{% static 'saojoao.jpg'  %}">
 
-{% for tipo in lista_tipo %}
-    <p>{{ tipo.nome }}
+  <div class="container">
 
-    	<a href="{% url 'tipo_atualizar' tipo.id %}"><button type="button" class="btn btn-info">EDITAR</a>
-    	<a href="{% url 'tipo_deletar' tipo.id %}"><button type="button" class="btn btn-danger">DELETAR</a>
-    </p>
-    
-{% empty %}
-<p>Nenhum tipo cadastrado</p>
-{% endfor %}
+    <h1 class="mt-12 mb-12">Lista de Tipos de Documentos</h1>
+    <hr />
+    <div class="row">
+      <div class="col-lg-12 mb-12">
+        <br />
+        <p><a href="{% url 'tipo_cadastrar' %}"><button type="button" class="btn btn-primary">Cadastrar Tipo de Documento</button></a></p>
+          <br />
+
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Nome da quadrilha</th>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Foto da Junina </th>
+                  <th scope="col">Gerenciar</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+              {% for tipo in lista_tipo %}
+                <tr>
+                  <th scope="row">{{ tipo.nome }}</th>
+                  <td>
+                    <a href="{% url 'tipo_atualizar' tipo.id %}"><button type="button" class="btn btn-info">Editar</button></a>
+                    <a href="{% url 'tipo_deletar' tipo.id %}"><button type="button" class="btn btn-danger">Deletar</button></a>
+                  </td>
+                </tr>
+
+              {% empty %}
+              <p>Nenhum</p>
+              {%endfor%}
+
+              </tbody>
+
+            </table>
+</div>
+    </div>
 
 
-<p><a href="{% url 'index' %}">
-    <button type="button">Voltar</button>
-</a></p>
+  </div>
 
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
- 
- <script src="{% static 'js/jquery.min.js' %}"></script>
- <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
+
 </html>
