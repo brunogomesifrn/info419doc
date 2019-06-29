@@ -4,14 +4,12 @@
 	<title>Página de Login</title>
 </head>
 <body>
-
 <h1>Página de Login</h1>
 <form method="post">
-	{% csrt_token %}
-	<p>Usuário: {{ form.username }}</p>
-	<p>Senha: {{ form.password }}</p>
-	<button type="submit">Login</button>
-	
+{% csrt_token %}
+<p>Usuário: {{ form.username }}</p>
+<p>Senha: {{ form.password }}</p>
+<button type="submit">Login</button>
 </form>
 </body>
 </html>

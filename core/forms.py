@@ -2,15 +2,8 @@ from django.forms import ModelForm
 from .models import Tipo, Doc
 from .models import cadastro
 
-class cadastroForm(ModelForm):
+class TipoForm(ModelForm):
 	class Meta():
-
-		model = cadastro
-		fields = ['usuario', 'senha', 'repetir_senha']
-
-
-		model = Cursos
-		fields = ['usuario', 'senha', 'repetir_senha']
 
 		model = Tipo
 		fields = ['nome']
@@ -26,3 +19,7 @@ class DocForm(ModelForm):
 
 
 		fields = ['nome', 'data', 'arquivo', 'local']
+class cadastroForm(ModelForm):
+	class Meta():
+		model = cadastro
+		fields = ['usuario', 'senha, repetir_senha']
