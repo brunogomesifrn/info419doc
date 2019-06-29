@@ -7,8 +7,8 @@ class Doc(models.Model):
 	nome = models.CharField('Nome', max_length=100)
 	arquivo = models.FileField('Arquivo', upload_to='upload')
 	data = models.DateTimeField('Data')
-	local = models.CharField('Local Físico' ax_length=100
-		
+	local = models.CharField('Local Físico' ax_length=100)
+
 class cadastro(models.Model):
 	usuario = models.CharField('usuario', max_length=100)
     senha = models.CharField('senha', null=True)
