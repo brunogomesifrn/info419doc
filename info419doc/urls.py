@@ -23,6 +23,7 @@ from core.views import tipo_listar, tipo_cadastrar, tipo_atualizar, tipo_deletar
 from core.views import doc_lista, doc_cadastrar, doc_atualizar, doc_deletar
 from core.views import cadastro, index
 
+
 urlpatterns = [
 	#URLs de Tipo
 	path('tipo/', tipo_listar, name='tipo'),
