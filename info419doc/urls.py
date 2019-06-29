@@ -17,11 +17,14 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
-#from django.contrib.auth import views auth_views
+
+
+#OUTRA COISA
+from core.views import index, perfil, registro, dados
+from django.contrib.auth import views as auth_views
 
 from core.views import tipo_listar, tipo_cadastrar, tipo_atualizar, tipo_deletar
 from core.views import documento, cadastroDoc, atualizarDoc, deletarDoc
-from core.views import cadastro, index, login, perfil
 
 urlpatterns = [
 	#URLs de Tipo
@@ -29,9 +32,6 @@ urlpatterns = [
 	path('tipo_cadastrar/', tipo_cadastrar, name='tipo_cadastrar'),
 	path('tipo_atualizar/<int:id>/', tipo_atualizar, name='tipo_atualizar'),
 	path('tpo_deletar/<int:id>/', tipo_deletar, name='tipo_deletar'),
-
-    #URLs de Perfil
-    path('perfil/', perfil, name='perfil'),
 
 
 
@@ -41,13 +41,21 @@ urlpatterns = [
     path('atualizarDoc/<int:id>/', atualizarDoc, name='atualizarDoc'),
     path('deletarDoc/<int:id>/', deletarDoc, name='deletarDoc'),
 
-
+ #OUTRA COISA
     path('', index, name='index'),
-    path('cadastro/', cadastro, name='cadastro'),
-    #path("logout/", auth_views.LogoutView.as_view(),
-    #name="logout"),
 
+    #Perfil
+    path('perfil/', perfil, name='perfil'),
+
+    #Registro de usuário
+    path('registro/', registro, name='registro'),
+    path('dados/<int:id>/', dados, name='dados'),
+
+    #Autentificação
+    path('login/', auth_views.LoginView.as_view(), name='login'),
+    path("logout/", auth_views.LogoutView.as_view(), name="logout"),
     path('admin/', admin.site.urls),
+
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 

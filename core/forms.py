@@ -1,5 +1,5 @@
 from django.forms import ModelForm
-from .models import Tipo, Doc, cadastro
+from .models import Tipo, Doc
 
 class TipoForm(ModelForm):
 	class Meta():
@@ -11,10 +11,7 @@ class DocForm(ModelForm):
 		model = Doc
 		fields = ['nome','arquivo', 'data', 'local']
 
-class cadastroForm(ModelForm):
-	class Meta():
-		model = cadastro
-		fields = ['usuario', 'senha', 'repetir_senha']
+
 
 
 

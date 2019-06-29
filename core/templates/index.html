@@ -1,11 +1,16 @@
+<!DOCTYPE html>
 <html>
 <head>
 	<title></title>
 </head>
 <body>
-<h1>Upload para Documentos</h1>
-<p><a href="{% url 'arquivos' %}">Arquivos</a></p>
+<h1>Página inicial</h1>
 <p><a href="{% url 'login' %}">Login</a></p>
-<p><a href="{% url 'cadastro' %}">Cadastrar</a></p>
+
+{% if user.is_authenticated %}
+<p><a href="{% url 'perfil' %}">Perfil</a></p>
+{% endif %}
+
+<p><a href="{% url 'registro' %}">Cadastro</a></p>
 </body>
 </html>
