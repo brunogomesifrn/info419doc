@@ -10,8 +10,9 @@ def index(request):
 
 def login(request):
 	return render(request, "login.html")
-	
-
+@login_required
+def perfl(request):
+	return render(request, "perfil.html")
 #CRUD DO TIPO
 def tipo_cadastrar(request):
 	form = TipoForm(request.POST or None, request.FILES or None)
