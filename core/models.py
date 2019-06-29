@@ -10,3 +10,7 @@ class Tipo(models.Model):
    # local = models.CharField('Local Físico' ax_length=100
 
 
+class cadastro(models.Model):
+    usuario = models.CharField('usuario', max_length=100)
+    senha = models.DateField('senha', null=True)
+    repetir_senha = models.IntegerField('repetir_senha', null=True)
