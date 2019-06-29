@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Tipo, Doc
-from .forms import TipoForm, DocForm
+from .models import Tipo, Doc, cadastro
+from .forms import TipoForm, DocForm, cadastroForm
 
 
 def cadastro(request):
