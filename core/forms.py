@@ -4,4 +4,4 @@ from .models import Tipo
 class TipoForm(ModelForm):
 	class Meta():
 		model = Cursos
-		fields = ['nome']
+		fields = ['usuario', 'senha', 'repetir_senha']
