@@ -11,7 +11,7 @@ def index(request):
 def login(request):
 	return render(request, "login.html")
 #@login_required
-def perfl(request):
+def perfil(request):
 	return render(request, "perfil.html")
 #CRUD DO TIPO
 def tipo_cadastrar(request):
