@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect
-from .models import Tipo, Doc, cadastro
-from .forms import TipoForm, DocForm, cadastroForm
+from .models import Tipo, Doc
+from .forms import TipoForm, DocForm
 
 #OUTRA COISA
 from django.contrib.auth.decorators import login_required
