@@ -6,10 +6,10 @@ class TipoForm(ModelForm):
 		model = Tipo
 		fields = ['nome']
 		
-#class DocForm(ModelForm):
-	#class Meta():
-		#model = Doc
-		#fields = ['nome', 'data', 'arquivo', 'local']
+class DocForm(ModelForm):
+	class Meta():
+		model = Doc
+		fields = ['nome', 'data', 'arquivo', 'local']
 
 class cadastroForm(ModelForm):
 	class Meta:
