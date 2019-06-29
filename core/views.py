@@ -2,18 +2,10 @@ from django.shortcuts import render, redirect
 from .models import Tipo, Doc, cadastro
 from .forms import TipoForm, DocForm, cadastroForm
 
-
-def cadastro(request):
-	return render(request, "cadastro.html")
-
-def index(request):
-	return render(request, "index.html")
-
-def login(request):
-	return render(request, "login.html")
-#@login_required
-def perfil(request):
-	return render(request, "perfil.html")
+#OUTRA COISA
+from django.contrib.auth.decorators import login_required
+from django.contrib.auth.forms import UserCreationForm
+from django.contrib.auth.models import User
 	
 #CRUD DO TIPO
 def tipo_cadastrar(request):
@@ -88,3 +80,33 @@ def deletarDoc(request, id):
 	return redirect('doc')
 
 
+#OUTRA COISA
+
+def index(request):
+	return render(request, "index.html")
+@login_required
+def perfil(request):
+	return render(request, "perfil.html")
+
+
+def registro(request):
+	form = UserCreationForm(request.POST or None)
+	if form.is_valid():
+		form.save()
+		return redirect('login')
+	contexto = {
+		'form': form
+	}
+	return render(request, 'registro.html', contexto)
+
+@login_required
+def dados(request, id):
+	user = User.objects.get(pk=id)
+	form = UserCreationForm(request.POST or None, instance=user)
+	if form.is_valid():
+		form.save()
+		return redirect('perfil')
+	contexto = {
+		'form': form
+	}
+	return render(request, 'registro.html', contexto)

@@ -1,16 +1,17 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Página de Login</title>
+	<title></title>
 </head>
 <body>
-<h1>Página de Login</h1>
+<h1>Página de login</h1>
 <form method="post">
-{% csrt_token %}
-<p>Usuário: {{ form.username }}</p>
-<p>Senha: {{ form.password }}</p>
-
+	
+{% csrf_token %}
+<p>{{ form.username.label_tag }} {{ form.username }}</p>
+<p>{{ form.password.label_tag }} {{ form.password }}</p>
 <button type="submit">Login</button>
+
 </form>
 </body>
 </html>
