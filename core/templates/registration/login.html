@@ -9,6 +9,10 @@
 {% csrt_token %}
 <p>Usuário: {{ form.username }}</p>
 <p>Senha: {{ form.password }}</p>
+
+<p>{{ form.username.label_tag }} {{ form.username }}</p>
+<p>{{ form.password.label_tag }} {{ form.password }}</p>
+
 <button type="submit">Login</button>
 </form>
 </body>

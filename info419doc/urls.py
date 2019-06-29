@@ -17,6 +17,8 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+from django.contrib.auth import views auth_views
+
 from core.views import tipo_listar, tipo_cadastrar, tipo_atualizar, tipo_deletar
 from core.views import documento, doc_cadastrar, doc_atualizar, doc_deletar
 from core.views import cadastro, index, login, perfil
@@ -42,7 +44,8 @@ urlpatterns = [
 
     path('', index, name='index'),
     path('cadastro/', cadastro, name='cadastro'),
-    path('login/', login, name='login'),
+    path("logout/", auth_views.LogoutView.as_view(),
+    name="logout"),
 
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
