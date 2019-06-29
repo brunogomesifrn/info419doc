@@ -41,7 +41,7 @@
                 <tr>
                   <th scope="row">{{ docs.nome }}</th>
                   <td>{{ docs.data_inicio }}</td>
-                  <td><p> <img src="/media/{{docs.foto}}" alt="Arquivo" width="100px" height="100px"/></td>
+                  <td><p> <img src="/media/{{docs.arquivo}}" alt="Arquivo" width="100px" height="100px"/></td>
                   <td>
                       <a href="{% url 'atualizarDoc' docs.id %}"><button type="button" class="btn btn-info">Editar</button></a>
                       <a href="{% url 'deletarDocs' docs.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
