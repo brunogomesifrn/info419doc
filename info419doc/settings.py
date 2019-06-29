@@ -37,10 +37,12 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-<<<<<<< HEAD
     'core',
+    <<<< HEAD
+   
+<<<
 =======
-    'core'
+    
 >>>>>>> f023a75d5733e6a97f77a0e051d06139da60ce93
 ]
 
