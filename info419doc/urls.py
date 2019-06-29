@@ -21,7 +21,7 @@ from django.conf.urls.static import static
 from core.views import tipo_listar, tipo_cadastrar, tipo_atualizar, tipo_deletar
 
 from core.views import doc_lista, doc_cadastrar, doc_atualizar, doc_deletar
-from core.views import cadastro, index
+from core.views import cadastro, index, login
 
 
 urlpatterns = [
@@ -45,7 +45,7 @@ urlpatterns = [
 
     path('', index, name='index'),
     path('cadastro/', cadastro, name='cadastro'),
-    
+    path('', login, name='login'),
 
     path('admin/', admin.site.urls),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
