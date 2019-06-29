@@ -1,6 +1,10 @@
+{% load static %}
+<!DOCTYPE HTML>
 <html>
 <head>
-	<title></title>
+	<title>Lista Tipos</title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
 </head>
 <body>
 <h1>Tipo</h1>
@@ -12,9 +16,11 @@
 
 {% for tipo in lista_tipo %}
     <p>{{ tipo.nome }}
-    	<a href="{% url 'tipo_atualizar' tipo.id %}">EDITAR</a>
-    	<a href="{% url 'tipo_deletar' tipo.id %}">DELETAR</a>
+
+    	<a href="{% url 'tipo_atualizar' tipo.id %}"><button type="button" class="btn btn-info">EDITAR</a>
+    	<a href="{% url 'tipo_deletar' tipo.id %}"><button type="button" class="btn btn-danger">DELETAR</a>
     </p>
+    
 {% empty %}
 <p>Nenhum tipo cadastrado</p>
 {% endfor %}
@@ -23,5 +29,10 @@
 <p><a href="{% url 'index' %}">
     <button type="button">Voltar</button>
 </a></p>
+
+
+ 
+ <script src="{% static 'js/jquery.min.js' %}"></script>
+ <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>
