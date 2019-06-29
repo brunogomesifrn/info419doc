@@ -1,12 +1,20 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
 <head>
 	<title>Perfil</title>
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
 </head>
 <body>
 	<h1>Perfil</h1>
 	<p><a href="{ url 'meusdados'}">Meus Dados</a></p>
 	<p><a href="{ url 'tipo'}">Tipos de Documentos</a></p>
 	<p><a href="{ url 'documentos'}">Documentos</a></p>
+
+
+  
+<script src="{% static 'js/jquery.min.js' %}"></script>
+<script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 </body>
 </html>

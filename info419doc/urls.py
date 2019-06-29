@@ -17,7 +17,9 @@ from django.contrib import admin
 from django.urls import path
 from django.conf import settings
 from django.conf.urls.static import static
+
 from core.views import tipo_listar, tipo_cadastrar, tipo_atualizar, tipo_deletar
+
 from core.views import doc_lista, doc_cadastrar, doc_atualizar, doc_deletar
 
 urlpatterns = [
@@ -26,6 +28,10 @@ urlpatterns = [
 	path('tipo_cadastrar/', tipo_cadastrar, name='tipo_cadastrar'),
 	path('tipo_atualizar/<int:id>/', tipo_atualizar, name='tipo_atualizar'),
 	path('tpo_deletar/<int:id>/', tipo_deletar, name='tipo_deletar'),
+
+    #URLs de Perfi
+    path('perfil/', perfil, name='perfi'),
+
 
 
     #URLs de documento
