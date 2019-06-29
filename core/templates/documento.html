@@ -1,0 +1,74 @@
+<title>Aula</title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
+</head>
+
+<body  background="{% static 'saojoao.jpg'  %}">
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-12 mb-12">Festival de quadrilhas InterTvCabugi </h1>
+
+   <hr />
+
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-lg-12 mb-12">
+          <br />
+          <p><a href="{% url 'cadastro' %}"><button type="button" class="btn btn-primary">Cadastrar junina </button></a></p>
+          <br />
+
+            <table class="table">
+              <thead class="thead-dark">
+                <tr>
+                  <th scope="col">Nome da quadrilha</th>
+                  <th scope="col">Categoria</th>
+                  <th scope="col">Foto da Junina </th>
+                  <th scope="col">Gerenciar</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+              {% for festiva in quadrilhas_listar %}
+                <tr>
+                  <th scope="row">{{ festiva.nome }}</th>
+                  <td>{{ festiva.categoria }}</td>
+                  <td><p> <img src="/media/{{festiva.foto}}" alt="Imagem" width="100px" height="100px"/></td>
+                  <td>
+                      <a href="{% url 'atualizar' festiva.id %}"><button type="button" class="btn btn-info">Editar</button></a>
+                      <a href="{% url 'deletar' festiva.id %}"><button type="button" class="btn btn-danger">Excluir</button></a>
+                  </td>
+                </tr>
+              {% empty %}
+              <p>Nenhum quadrilha inscrita</p>
+              {%endfor%}
+
+              </tbody>
+
+            </table>
+
+
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+
+</body>
+
+</html>

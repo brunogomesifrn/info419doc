@@ -1,9 +1,88 @@
 <!DOCTYPE html>
-<html>
+{% load static %}
+<html lang="en">
+
 <head>
-	<title></title>
+
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <title>Festival de quadrilhas </title>
+
+  <!-- Bootstrap core CSS -->
+  <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+  <!-- Custom styles for this template -->
+  <link href="{% static 'css/modern-business.css' %}" rel="stylesheet">
+
+  <link href="{% static 'css/cor.css' %}" rel="stylesheet">
+
 </head>
-<body>
+
+<body background="{% static 'cadastro.jpg' %}">
+
+  <!-- Page Content -->
+  <div class="container">
+
+    <!-- Page Heading/Breadcrumbs -->
+    <h1 class="mt-12 mb-12">Festival de quadrilhas</h1>
+
+   <hr />
+
+    <!-- Content Row -->
+    <div class="row">
+      <div class="col-lg-12 mb-12">
+
+      <h3>Cadastro:</h3>
+          
+        <form method="POST" enctype="multipart/form-data">
+          {% csrf_token %}
+
+          <div class="control-group form-group">
+            <div class="controls">
+            <!--  <label>Nome da quadrilha:</label>
+              <input type="text" class="form-control" name="at1" required>
+              <p class="help-block"></p> -->
+              <p>{{form.nome.label}}: {{ form.nome }}</p>
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              <!--<label>Categoria:</label>
+              <input type="text" class="form-control" name="at2" required>
+            -->
+            <p>{{form.categoria.label}}: {{ form.categoria }}</p>
+            </div>
+          </div>
+
+          <div class="control-group form-group">
+            <div class="controls">
+              <!--<label>Foto da Junina:</label>
+              <input type="file" class="form-control" name="nome" required>
+              <p class="help-block"></p> -->
+            <p>{{form.foto.label}}: {{ form.foto }}</p>
+            </div>
+          </div>
+          <br />
+          <button type="submit" class="btn btn-primary" id="sendMessageButton">Salvar</button>
+        </form>
+
+      </div>
+    </div>
+    <!-- /.row -->
+
+  </div>
+  <!-- /.container -->
+
+  
+
+  <!-- Bootstrap core JavaScript -->
+  <script src="{% static 'js/jquery.min.js' %}"></script>
+  <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
 
 </body>
+
 </html>
