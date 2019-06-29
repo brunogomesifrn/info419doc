@@ -12,6 +12,10 @@ class DocForm(ModelForm):
 		fields = ['nome','arquivo']#, 'data', 'local']
 
 class cadastroForm(ModelForm):
-	class Meta:
+	class Meta():
 		model = cadastro
 		fields = ['usuario', 'senha', 'repetir_senha']
+
+
+
+
