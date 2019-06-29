@@ -28,8 +28,8 @@ urlpatterns = [
 	path('tipo_atualizar/<int:id>/', tipo_atualizar, name='tipo_atualizar'),
 	path('tpo_deletar/<int:id>/', tipo_deletar, name='tipo_deletar'),
 
-    #URLs de Perfi
-    path('perfil/', perfil, name='perfi'),
+    #URLs de Perfil
+    path('perfil/', perfil, name='perfil'),
 
 
 
