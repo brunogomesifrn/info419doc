@@ -5,8 +5,9 @@ class Tipo(models.Model):
 
 class Doc(models.Model):
 	nome = models.CharField('Nome', max_length=100)
+	arquivo = models.FileField('Arquivo', upload_to='upload')
     #data = models.DateTimeField('Data')
-    arquivo = models.FileField('Arquivo', upload_to='upload')
+   
    # local = models.CharField('Local Físico' ax_length=100
 
 
