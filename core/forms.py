@@ -15,4 +15,3 @@ class cadastroForm(ModelForm):
 	class Meta:
 		model = cadastro
 		fields = ['usuario', 'senha', 'repetir_senha']
->>>>>>> fe4797f986f5325bb5214e9ba7b517170de79852
