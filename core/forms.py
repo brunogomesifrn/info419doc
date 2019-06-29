@@ -6,6 +6,8 @@ class TipoForm(ModelForm):
 		model = Tipo
 		fields = ['nome']
 
+
+
 class DocForm(ModelForm):
 	class Meta():
 		model = Doc
