@@ -1,6 +1,5 @@
 from django.shortcuts import render, redirect
 from .models import Tipo, Doc
-from .models import Cursos
 from .forms import TipoForm, DocForm
 
 
